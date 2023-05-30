@@ -1,9 +1,14 @@
 package com.example.springtest.entity;
 
+import jakarta.annotation.Priority;
 import jakarta.persistence.*;
+import lombok.Data;
+
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
+@Data
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,9 +20,7 @@ public class Task {
 
     private LocalDate dueDate;
 
-    private Priority priority;
-
-    private Status status;
+    private Long priority;
 
     @ManyToOne
     @JoinColumn(name = "category_id")

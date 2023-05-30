@@ -1,9 +1,12 @@
 package com.example.springtest.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.time.LocalDateTime;
 
 @Entity
+@Data
 public class Reminder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
